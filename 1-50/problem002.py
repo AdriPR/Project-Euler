@@ -19,9 +19,8 @@ def fibonacci():
     while n <= 4000000:
         if n % 2 == 0:
             res = res + n
-        aux = x
         x = x + n 
-        n = aux
+        n = x - n
         
     return print(f'The sum of even Fibonacci whose values do not exceed four million is: {res}')
 
