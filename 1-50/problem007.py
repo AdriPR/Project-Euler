@@ -13,14 +13,14 @@ def is_prime(n):
             return False
     return True
 
-def prime():
+def prime(index):
     count = 0
     p = 2
-    while count < 10001:
+    while count < index:
         if is_prime(p):
             count = count + 1
         p = p + 1
     return print(f'Solution: {p-1}')
 
 if __name__ == '__main__':
-    prime()
+    prime(10001)
