@@ -1,6 +1,6 @@
 #
 # Project Euler Solution
-# Problem ID: 6
+# Problem ID: 7
 #
 # By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 #
@@ -13,10 +13,10 @@ def is_prime(n):
             return False
     return True
 
-def prime(index):
+def prime(pos):
     count = 0
     p = 2
-    while count < index:
+    while count < pos:
         if is_prime(p):
             count = count + 1
         p = p + 1
