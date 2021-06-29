@@ -6,7 +6,6 @@
 #
 
 def greatest_product(n):
-    first = 0
     res = 0
     l = list(map(int, n))
 
@@ -15,11 +14,9 @@ def greatest_product(n):
 
         for i in range(12):
             product = product * l[i]
-
+            
         if product > res:
             res = product
-
-        first = first + 1
 
     return print(f'Solution: {res}')
 
