@@ -5,19 +5,26 @@
 # Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
 #
 
-def greatest_product(n):
+import math
+
+# Find the thirteen adjacent digits in the 1000-digit number that have the greatest product from the subdivided string number
+def greatest(n):
     res = 0
     l = list(map(int, n))
 
     while len(l)>12:
         product = l.pop(0)
+        product = product * math.prod(l[i] for i in range(12))
+        res = product if product > res else res
 
-        for i in range(12):
-            product = product * l[i]
-            
-        if product > res:
-            res = product
+    return res
 
+def greatest_product(n):
+    res = 0
+
+    l = [e for e in n.split('0') if len(e) > 12]
+    res = max(greatest(e) for e in l)
+    
     return print(f'Solution: {res}')
 
 if __name__ == '__main__':
